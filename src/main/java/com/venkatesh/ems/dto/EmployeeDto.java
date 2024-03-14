@@ -1,6 +1,5 @@
 package com.venkatesh.ems.dto;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
