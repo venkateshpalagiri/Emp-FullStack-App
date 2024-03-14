@@ -2,6 +2,7 @@ package com.venkatesh.ems.service.impl;
 
 import com.venkatesh.ems.dto.EmployeeDto;
 import com.venkatesh.ems.entity.Employee;
+import com.venkatesh.ems.exception.EmployeeNotFound;
 import com.venkatesh.ems.exception.ResourceNotFoundException;
 import com.venkatesh.ems.mapper.EmployeeMapper;
 import com.venkatesh.ems.repository.EmployeeRepository;
@@ -77,7 +78,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 //                        OR
         Employee employee=employeeRepository
                 .findById(id)
-                .orElseThrow(()->new ResourceNotFoundException("Employee not found with the given id:"+id));
+                .orElseThrow(()->new EmployeeNotFound("Employee not found with the given id:"+id));
         employeeRepository.delete(employee);
 
     }
